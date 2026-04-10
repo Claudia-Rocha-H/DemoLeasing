@@ -1,0 +1,19 @@
+{
+  "properties": [
+    {
+      "name": "leasing.email.from",
+      "type": "java.lang.String",
+      "description": "Sender email address used by notification emails."
+    },
+    {
+      "name": "leasing.email.demo.recipient",
+      "type": "java.lang.String",
+      "description": "Recipient email used when demo mode is enabled."
+    },
+    {
+      "name": "leasing.email.demo.enabled",
+      "type": "java.lang.Boolean",
+      "description": "When true, all outbound notification emails are redirected to demo recipient."
+    }
+  ]
+}

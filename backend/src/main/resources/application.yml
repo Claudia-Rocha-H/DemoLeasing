@@ -1,0 +1,40 @@
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://db.itdmiyvnrabvsnmyyhnx.supabase.co:5432/postgres?sslmode=require&currentSchema=leasing}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        "[default_schema]": leasing
+        "[format_sql]": true
+  mail:
+    host: ${MAIL_HOST:sandbox.smtp.mailtrap.io}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+
+server:
+  port: 8080
+
+leasing:
+  email:
+    from: ${LEASING_EMAIL_FROM:tiblackriver@gmail.com}
+    demo:
+      recipient: ${LEASING_EMAIL_DEMO_RECIPIENT:tiblackriver@gmail.com}
+      enabled: ${LEASING_EMAIL_DEMO_ENABLED:true}
